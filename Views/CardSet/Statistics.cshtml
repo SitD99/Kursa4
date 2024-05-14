@@ -1,0 +1,156 @@
+﻿@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика тестирования карточек</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .chart {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            clip: rect(0, 100px, 100px, 50px);
+        }
+
+        .chart-left {
+            border-right: 2px solid #fff;
+            transform: rotate(0deg);
+        }
+
+        .chart-right {
+            border-left: 2px solid #fff;
+            transform: rotate(180deg);
+        }
+
+        .chart-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Статистика тестирования карточек</h2>
+
+    <div class="chart-container">
+        <div class="chart chart-left" style="border-color: blue;"></div>
+        <div class="chart chart-right" style="border-color: red;"></div>
+        <div class="chart-percentage" style="color: black;">
+            @if (@ViewBag.CorrectCount + @ViewBag.IncorrectCount != 0)
+            {
+                <span>@(((double)@ViewBag.CorrectCount / (@ViewBag.CorrectCount + @ViewBag.IncorrectCount)) * 100)% правильных ответов</span>
+            }
+            else
+            {
+                <span>0% правильных ответов</span>
+            }
+        </div>
+    </div>
+
+    <p>Количество правильных ответов: @ViewBag.CorrectCount</p>
+    <p>Количество неправильных ответов: @ViewBag.IncorrectCount</p>
+
+    <a href="/CardSet">Вернуться к списку наборов</a>
+</body>
+</html> *@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика тестирования карточек</title>
+    <style>
+        #chart-container {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        #chart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .legend-item {
+            margin-bottom: 10px;
+        }
+
+        #percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Статистика тестирования карточек</h2>
+
+    <div id="chart-container">
+        <canvas id="chart"></canvas>
+        <div id="percentage"></div>
+        <div id="legend"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        var correctCount = @ViewBag.CorrectCount;
+        var totalCount = correctCount + @ViewBag.IncorrectCount;
+        var correctPercentage = (correctCount / totalCount * 100).toFixed(2);
+
+        var ctx = document.getElementById('chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Правильные', 'Неправильные'],
+                datasets: [{
+                    data: [correctCount, totalCount - correctCount],
+                    backgroundColor: ['#36A2EB', '#FF6384']
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            },
+            cutout: '85%'
+        });
+
+        // Добавляем легенду
+        var legend = document.getElementById('legend');
+
+        // Добавляем процентное соотношение
+        var percentage = document.getElementById('percentage');
+        percentage.textContent = correctPercentage + '% правильных ответов';
+    </script>
+
+    <a href="/CardSet">Вернуться к списку наборов</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+
+ @{
+    ViewData["Title"] = "Choose Action";
+}
+
+<h1>Выберите действие:</h1>
+
+<form asp-controller="Home" asp-action="ChooseAction" method="post">
+    <button type="submit" name="action" value="Create" class="btn btn-primary">Создать новый набор карточек</button>
+    <button type="submit" name="action" value="View" class="btn btn-secondary">Покажи мои наборы карточек</button>
+</form>
+
+<form asp-controller="Home" asp-action="ChooseAction" method="post">
+    <button type="submit" name="action" value="Logout" class="btn btn-secondary">Выход</button>
+</form> 

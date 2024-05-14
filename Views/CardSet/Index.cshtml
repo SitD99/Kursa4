@@ -1,0 +1,52 @@
+﻿@* @model List<WebApp.Models.CardSet>
+
+<h2>Ваши наборы карточек:</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Название набора</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cardSet in Model)
+        {
+            <tr>
+                <td>@cardSet.Title</td>
+                <td>
+                    <button type="button" onclick="redirectToDetails()">Просмотреть набор</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function redirectToDetails() {
+        window.location.href = "/Card/Details?id=" + 1;
+    }
+</script>
+ *@
+ @model List<WebApp.Models.CardSet>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ваши наборы карточек</title>
+</head>
+<body>
+    <h2>Ваши наборы карточек:</h2>
+
+    <ul>
+        @foreach (var cardSet in Model)
+        {
+            <li>
+                <a href="/CardSet/Details?id=@cardSet.Id">@cardSet.Title</a>
+            </li>
+        }
+    </ul>
+
+    <a href="/Home/ChooseAction">Назад</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!-- Views/Card/Delete.cshtml -->
+@model WebApp.Models.Card
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удалить карточку</title>
+</head>
+<body>
+    <h2>Удалить карточку</h2>
+    <div>
+        <h4>Вы уверены, что хотите удалить эту карточку?</h4>
+        <div>
+            <h3>Лицевая сторона:</h3>
+            <p>@Model.FrontText</p>
+        </div>
+        <div>
+            <h3>Обратная сторона:</h3>
+            <p>@Model.BackText</p>
+        </div>
+        <form asp-action="Delete" asp-controller="Card" method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CardSetId" />
+            <button type="submit">Удалить</button>
+            <a asp-action="Details" asp-controller="CardSet" asp-route-id="@Model.CardSetId">Отмена</a>
+        </form>
+    </div>
+</body>
+</html>

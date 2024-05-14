@@ -1,0 +1,51 @@
+﻿
+@*  <!-- Views/Card/Create.cshtml -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить новую карточку</title>
+</head>
+<body>
+    <h2>Добавить новую карточку</h2>
+
+    <form asp-action="Create" asp-controller="Card" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="frontText">Текст на лицевой стороне:</label>
+            <input asp-for="frontText" />         
+        </div>
+        <div>
+            <label asp-for="backText">Текст на обратной стороне:</label>
+            <input asp-for="backText" />
+        </div>
+        <input type="hidden" asp-for="CardSetId" />
+        <button type="submit">Добавить карточку</button>
+    </form>
+</body>
+</html> 
+ *@
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить новую карточку</title>
+</head>
+<body>
+    <h2>Добавить новую карточку</h2>
+    
+
+<form asp-controller="Card" asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="frontText">Лицевая сторона:</label>
+        <input type="text" id="frontText" name="frontText" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="backText">Обратная сторона:</label>
+        <input type="text" id="backText" name="backText" class="form-control" />
+    </div>
+    <input type="hidden" id="cardSetId" name="cardSetId" value="@ViewBag.CardSetId" />
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+</body>
+</html>

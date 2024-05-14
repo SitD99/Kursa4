@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASP kursa4 всё сам своими руками.props" />
+</Project>

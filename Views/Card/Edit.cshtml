@@ -1,0 +1,29 @@
+﻿<!-- Views/Card/Edit.cshtml -->
+@model WebApp.Models.Card
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактировать карточку</title>
+</head>
+<body>
+    <h2>Редактировать карточку</h2>
+
+    <form asp-action="Edit" asp-controller="Card" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="FrontText">Текст на лицевой стороне:</label>
+            <input asp-for="FrontText" />
+            <span asp-validation-for="FrontText"></span>
+        </div>
+        <div>
+            <label asp-for="BackText">Текст на обратной стороне:</label>
+            <input asp-for="BackText" />
+            <span asp-validation-for="BackText"></span>
+        </div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CardSetId" />
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>

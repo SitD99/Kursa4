@@ -1,0 +1,56 @@
+﻿@* @model WebApp.Models.CardSet
+
+<h2>Набор карточек: @Model.Title</h2>
+
+@if (Model.Cards != null && Model.Cards.Any())
+{
+    <p>Первая карточка в наборе:</p> <button id="cardButton">@Model.Cards.First().FrontText</button>
+    <script>
+        document.getElementById("cardButton").addEventListener("click", function () {
+            window.location.href = '/Card/Details?id=@Model.Cards.First().Id';
+        });
+    </script>
+}
+else
+{
+    <p>В этом наборе пока нет карточек.</p>
+}
+
+<a asp-action="Index" asp-controller="CardSet">Вернуться к списку наборов</a> *@
+@model WebApp.Models.CardSet
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Просмотр набора карточек</title>
+</head>
+<body>
+    <h2>Набор карточек: @Model.Title</h2>
+
+    <ul>
+        @foreach (var card in Model.Cards)
+        {
+            <li>
+                <strong>Лицевая сторона:</strong> @card.FrontText <br />
+                <strong>Обратная сторона:</strong> @card.BackText <br />
+                <form asp-action="Edit" asp-controller="Card" method="get">
+                    <input type="hidden" name="id" value="@card.Id" />
+                    <button type="submit">Изменить</button>
+                </form>
+                <form asp-action="Delete" asp-controller="Card" method="get">
+                    <input type="hidden" name="id" value="@card.Id" />
+                    <button type="submit">Удалить</button>
+                </form>
+            </li>
+        }
+    </ul>
+
+    <a asp-action="Index" asp-controller="CardSet">Вернуться к списку наборов</a>
+
+    
+    <a href="/Card/Details?cardSetId=@ViewBag.CardSetId&id=@ViewBag.FirstCardId">Начать</a>
+
+    <a asp-action="Test" asp-controller="CardSet" asp-route-id="@Model.Id">Тест</a>
+    
+</body>
+</html>

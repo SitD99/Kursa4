@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ASP_kursa4_всё_сам_своими_руками
+build_property.RootNamespace = ASP_kursa4_всё_сам_своими_руками
+build_property.ProjectDir = C:\Users\user\OneDrive\Рабочий стол\прикольчики для C#\ASP kursa4 всё сам своими руками\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\user\OneDrive\Рабочий стол\прикольчики для C#\ASP kursa4 всё сам своими руками
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/CardSet/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFNldFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/CardSet/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFNldFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/CardSet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFNldFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/CardSet/Statistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFNldFxTdGF0aXN0aWNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/CardSet/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFNldFxUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Card/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Card/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Card/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Card/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Home/ChooseAction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaG9vc2VBY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Рабочий стол/прикольчики для C\#/ASP kursa4 всё сам своими руками/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

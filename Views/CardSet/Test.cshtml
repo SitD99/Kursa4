@@ -1,0 +1,217 @@
+﻿@* @model WebApp.Models.CardSet
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестирование карточек</title>
+</head>
+<body>
+    <h2>Тестирование карточек: @Model.Title</h2>
+
+    <div id="card-container" style="width: 300px; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; position: relative;">
+        <div id="card-content" style="display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer;">
+            <!-- Тут будет содержимое карточки -->
+        </div>
+    </div>
+
+    <div id="options">
+        <!-- Здесь будут варианты ответов -->
+    </div>
+
+    <button id="next-button" onclick="nextCard()">Следующая карточка</button>
+
+    <a asp-action="Index" asp-controller="CardSet">Вернуться к списку наборов</a>
+
+    <script>
+        var cardSetId = @Model.Id;
+        console.log(@Html.Raw(Json.Serialize(ViewBag.Cards)));
+        var cards = @Html.Raw(Json.Serialize(ViewBag.Cards));
+        cards = shuffleArray(cards);
+
+        var currentCardIndex = -1;
+        var currentCard;
+        var correctOptionIndex;
+
+        function startTest() {
+            currentCardIndex = -1;
+            nextCard();
+        }
+
+        function nextCard() {
+            currentCardIndex++;
+            if (currentCardIndex >= cards.length) {
+                // Конец тестирования
+                alert('Тестирование завершено!');
+                return;
+            }
+
+            currentCard = cards[currentCardIndex];
+            displayCard(currentCard);
+            displayOptions(currentCard);
+        }
+
+        function displayCard(card) {
+            var cardContent = document.getElementById('card-content');
+            cardContent.textContent = card.frontText;
+        }
+
+        function displayOptions(card) {
+            var optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+
+            // Выбираем случайные карточки из того же набора
+            var otherCards = cards.filter(function (c) { return c.id !== card.id && c.cardSetId === cardSetId; });
+            var shuffledCards = shuffleArray(otherCards).slice(0, 3);
+
+            // Добавляем вариант с правильным ответом
+            shuffledCards.push(card);
+
+            // Перемешиваем варианты ответов
+            var shuffledOptions = shuffleArray(shuffledCards);
+
+            shuffledOptions.forEach(function (option, index) {
+                var button = document.createElement('button');
+                button.textContent = option.backText;
+                button.onclick = function () {
+                    checkAnswer(option, index);
+                };
+                optionsContainer.appendChild(button);
+            });
+
+            // Запоминаем индекс правильного ответа
+            correctOptionIndex = shuffledOptions.findIndex(function (option) { return option.id === card.id; });
+        }
+
+        function checkAnswer(option, index) {
+            if (index === correctOptionIndex) {
+                alert('Верно!');
+            } else {
+                alert('Неверно. Правильный ответ: ' + currentCard.backText);
+            }
+        }
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
+        window.onload = startTest;
+    </script>
+</body>
+</html> *@
+
+@model WebApp.Models.CardSet
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестирование карточек</title>
+</head>
+<body>
+    <h2>Тестирование карточек: @Model.Title</h2>
+
+    <div id="card-container" style="width: 300px; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; position: relative;">
+        <div id="card-content" style="display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer;">
+            <!-- Тут будет содержимое карточки -->
+        </div>
+    </div>
+
+    <div id="options">
+        <!-- Здесь будут варианты ответов -->
+    </div>
+
+    <a asp-action="Index" asp-controller="CardSet">Вернуться к списку наборов</a>
+
+    <script>
+        var cardSetId = @Model.Id;
+        console.log(@Html.Raw(Json.Serialize(ViewBag.Cards)));
+        var cards = @Html.Raw(Json.Serialize(ViewBag.Cards));
+        cards = shuffleArray(cards);
+
+        var currentCardIndex = -1;
+        var currentCard;
+        var correctOptionIndex;
+        var correctAnswersCount = 0;
+        var incorrectAnswersCount = 0;
+
+        function startTest() {
+            currentCardIndex = -1;
+            correctAnswersCount = 0;
+            incorrectAnswersCount = 0;
+            nextCard();
+        }
+
+        function nextCard() {
+            currentCardIndex++;
+            if (currentCardIndex >= cards.length) {
+                // Конец тестирования
+                // Перенаправляем на страницу со статистикой и передаем количество правильных и неправильных ответов
+                window.location.href = '/CardSet/Statistics?correct=' + correctAnswersCount + '&incorrect=' + incorrectAnswersCount;
+                return;
+            }
+
+            currentCard = cards[currentCardIndex];
+            displayCard(currentCard);
+            displayOptions(currentCard);
+        }
+
+        function displayCard(card) {
+            var cardContent = document.getElementById('card-content');
+            cardContent.textContent = card.frontText;
+        }
+
+        function displayOptions(card) {
+            var optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+
+            // Выбираем случайные карточки из того же набора
+            var otherCards = cards.filter(function (c) { return c.id !== card.id && c.cardSetId === cardSetId; });
+            var shuffledCards = shuffleArray(otherCards).slice(0, 3);
+
+            // Добавляем вариант с правильным ответом
+            shuffledCards.push(card);
+
+            // Перемешиваем варианты ответов
+            var shuffledOptions = shuffleArray(shuffledCards);
+
+            shuffledOptions.forEach(function (option, index) {
+                var button = document.createElement('button');
+                button.textContent = option.backText;
+                button.onclick = function () {
+                    checkAnswer(option, index);
+                };
+                optionsContainer.appendChild(button);
+            });
+
+            // Запоминаем индекс правильного ответа
+            correctOptionIndex = shuffledOptions.findIndex(function (option) { return option.id === card.id; });
+        }
+
+        function checkAnswer(option, index) {
+            if (index === correctOptionIndex) {
+                correctAnswersCount++;
+            } else {
+                incorrectAnswersCount++;
+            }
+            nextCard();
+        }
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
+        window.onload = startTest;
+    </script>
+</body>
+</html>

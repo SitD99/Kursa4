@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "7MiLgzELAUj9RJuK1g7HQp5dojyQ1XB+WrDCZLy5umg=",
+  "Source": "ASP kursa4 всё сам своими руками",
+  "BasePath": "_content/ASP kursa4 всё сам своими руками",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ASP kursa4 всё сам своими руками\\wwwroot",
+      "Source": "ASP kursa4 всё сам своими руками",
+      "ContentRoot": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\",
+      "BasePath": "_content/ASP kursa4 всё сам своими руками",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\css\\Styles.css",
+      "SourceId": "ASP kursa4 всё сам своими руками",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\",
+      "BasePath": "_content/ASP kursa4 всё сам своими руками",
+      "RelativePath": "css/Styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\js\\Scripts.js",
+      "SourceId": "ASP kursa4 всё сам своими руками",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\",
+      "BasePath": "_content/ASP kursa4 всё сам своими руками",
+      "RelativePath": "js/Scripts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Scripts.js"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\css\\Styles.css",
+      "PackagePath": "staticwebassets\\css\\Styles.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Рабочий стол\\прикольчики для C#\\ASP kursa4 всё сам своими руками\\wwwroot\\js\\Scripts.js",
+      "PackagePath": "staticwebassets\\js\\Scripts.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ASP kursa4 всё сам своими руками.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ASP kursa4 всё сам своими руками.props",
+      "PackagePath": "build\\ASP kursa4 всё сам своими руками.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ASP kursa4 всё сам своими руками.props",
+      "PackagePath": "buildMultiTargeting\\ASP kursa4 всё сам своими руками.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ASP kursa4 всё сам своими руками.props",
+      "PackagePath": "buildTransitive\\ASP kursa4 всё сам своими руками.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
